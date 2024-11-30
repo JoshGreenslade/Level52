@@ -43,7 +43,7 @@ public class Game
         HeroParty.AddItem(Item.HealingPotion());
 
         HeroParty.GearInventory.Add(Gear.Dagger());
-        HeroParty.GearInventory.Add(Gear.Sword());
+        MonsterParty1.GearInventory.Add(Gear.Sword());
     }
 
     private void CheckLoseCondition()

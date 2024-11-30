@@ -1,4 +1,6 @@
 using Level52.Actions;
+using Level52.Gears;
+using Level52.Items;
 using Level52.Utils;
 using Action = Level52.Actions.Action;
 namespace Level52;
@@ -53,10 +55,21 @@ public class Battle
 
     private bool IsBattleOver()
     {
-        var deadParty = Parties.FirstOrDefault(party => party.Characters.Count == 0); ;
+        var deadParty = Parties.FirstOrDefault(party => party.Characters.Count == 0);
         if (deadParty != null)
         {
             BattleOngoing = false;
+            var aliveParty = Parties.FirstOrDefault(party => party.Characters.Count != 0);
+            foreach (Item item in ItemSystem.GetItems(deadParty))
+            {
+                ItemSystem.AddItem(aliveParty, item);
+                ItemSystem.RemoveItem(deadParty, item);
+            }
+            foreach (Gear gear in GearSystem.GetGear(deadParty))
+            {
+                GearSystem.AddGearToParty(aliveParty, gear);
+                GearSystem.RemoveGearFromParty(deadParty, gear);
+            }
             return true;
         }
         return false;

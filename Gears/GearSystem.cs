@@ -26,4 +26,8 @@ static class GearSystem
         if (!character.Attacks.Contains(attack))
             character.Attacks.Add(attack);
     }
+
+    public static List<Gear> GetGear(Party party) => party.GearInventory;
+    public static void AddGearToParty(Party party, Gear gear) => party.GearInventory.Add(gear);
+    public static void RemoveGearFromParty(Party party, Gear gear) => party.GearInventory.Remove(gear);
 }
