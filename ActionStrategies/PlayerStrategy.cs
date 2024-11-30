@@ -25,7 +25,7 @@ public class PlayerStrategy : IActionStrategy
     private Action AttackAction(Battle battle)
     {
         Character target = SelectTarget(battle);
-        AttackData attack = SelectAttack(battle);
+        Attack attack = SelectAttack(battle);
         return Action.CreateAttackAction(battle.GetActiveCharacter(), target, attack);
     }
 
@@ -40,7 +40,7 @@ public class PlayerStrategy : IActionStrategy
         return Action.CreateDoNothingAction(battle.GetActiveCharacter());
     }
 
-    private AttackData SelectAttack(Battle battle)
+    private Attack SelectAttack(Battle battle)
     {
         var activeCharacter = battle.GetActiveCharacter();
         var attacks = activeCharacter.GetAttacks();

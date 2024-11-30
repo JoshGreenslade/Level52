@@ -11,7 +11,7 @@ public static class Monsters
             name: "Skeleton",
             maxHp: 5,
             actionStrategy: new AlwaysAttackStrategy(),
-            attacks: new List<AttackData> { Attacks.Attacks.BoneCrush },
+            attacks: new List<Attack> { Attack.BoneCrush() },
             actions: new List<ActionType> { ActionType.Attack, ActionType.DoNothing }
         );
     }
@@ -21,7 +21,7 @@ public static class Monsters
         return new Character(
             name: "True Programmer",
             maxHp: 25,
-            attacks: new List<AttackData> { Attacks.Attacks.Punch },
+            attacks: new List<Attack> { Attack.Punch() },
             actions: new List<ActionType> { ActionType.Attack, ActionType.DoNothing }
         );
     }
@@ -32,7 +32,7 @@ public static class Monsters
             name: "Uncoded One",
             maxHp: 15,
             actionStrategy: new AlwaysAttackStrategy(),
-            attacks: new List<AttackData> { Attacks.Attacks.Unraveling },
+            attacks: new List<Attack> { Attack.Unraveling() },
             actions: new List<ActionType> { ActionType.Attack, ActionType.DoNothing }
         );
     }

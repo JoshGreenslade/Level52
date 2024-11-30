@@ -1,3 +1,6 @@
+using System.Data.Common;
+using Level52.Attacks;
+using Level52.Damages;
 using Level52.Items;
 using Level52.Utils;
 
@@ -10,7 +13,7 @@ public static class ActionSystem
         switch (action.Type)
         {
             case ActionType.Attack:
-                ExecuteAttack(action.ActiveCharacter, action.Target);
+                ExecuteAttack(action.ActiveCharacter, action.Target, action.Attack);
                 break;
             case ActionType.DoNothing:
                 ExecuteDoNothing(action.ActiveCharacter);
@@ -29,10 +32,10 @@ public static class ActionSystem
 
     }
 
-    public static void ExecuteAttack(Character activeCharacter, Character target)
+    public static void ExecuteAttack(Character activeCharacter, Character target, Attack attack)
     {
         ServiceLocator.Display.WriteLine($"{activeCharacter.GetName()} attacks {target.GetName()}!");
-        target.TakeDamage(1);
+        AttackSystem.ExecuteAttack(activeCharacter, target, attack);
     }
 
     public static void ExecuteDoNothing(Character activeCharacter)

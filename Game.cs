@@ -39,9 +39,9 @@ public class Game
 
         HeroParty.SetPlayerControlled();
 
-        HeroParty.AddItem(Item.CreateHealingPotion());
-        HeroParty.AddItem(Item.CreateHealingPotion());
-        HeroParty.AddItem(Item.CreateHealingPotion());
+        HeroParty.AddItem(Item.HealingPotion());
+        HeroParty.AddItem(Item.HealingPotion());
+        HeroParty.AddItem(Item.HealingPotion());
     }
 
     private void CheckLoseCondition()

@@ -1,36 +1,36 @@
 {
   "version": 3,
   "targets": {
-    "net7.0": {}
+    "net8.0": {}
   },
   "libraries": {},
   "projectFileDependencyGroups": {
-    "net7.0": []
+    "net8.0": []
   },
   "packageFolders": {
-    "/home/josh/.nuget/packages/": {}
+    "/home/developer/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/josh/Tutorial/C#/APlayersGuide/Level52/Level52.csproj",
+      "projectUniqueName": "/home/developer/tutorials/APlayersGuide/Level52/Level52.csproj",
       "projectName": "Level52",
-      "projectPath": "/home/josh/Tutorial/C#/APlayersGuide/Level52/Level52.csproj",
-      "packagesPath": "/home/josh/.nuget/packages/",
-      "outputPath": "/home/josh/Tutorial/C#/APlayersGuide/Level52/obj/",
+      "projectPath": "/home/developer/tutorials/APlayersGuide/Level52/Level52.csproj",
+      "packagesPath": "/home/developer/.nuget/packages/",
+      "outputPath": "/home/developer/tutorials/APlayersGuide/Level52/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/josh/.nuget/NuGet/NuGet.Config"
+        "/home/developer/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
-        "net7.0"
+        "net8.0"
       ],
       "sources": {
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "projectReferences": {}
         }
       },
@@ -41,8 +41,8 @@
       }
     },
     "frameworks": {
-      "net7.0": {
-        "targetAlias": "net7.0",
+      "net8.0": {
+        "targetAlias": "net8.0",
         "imports": [
           "net461",
           "net462",
@@ -59,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.403/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.110/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

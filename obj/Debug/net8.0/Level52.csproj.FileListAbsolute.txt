@@ -12,3 +12,4 @@
 /home/developer/tutorials/APlayersGuide/Level52/obj/Debug/net8.0/Level52.pdb
 /home/developer/tutorials/APlayersGuide/Level52/obj/Debug/net8.0/Level52.genruntimeconfig.cache
 /home/developer/tutorials/APlayersGuide/Level52/obj/Debug/net8.0/ref/Level52.dll
+/home/developer/tutorials/APlayersGuide/Level52/obj/Debug/net8.0/Level52.sourcelink.json

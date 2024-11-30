@@ -11,10 +11,7 @@ public class Item
         Healing = healing;
     }
 
-    public static Item CreateHealingPotion()
-    {
-        return new Item(
-            name: "Healing Potion",
-            healing: 10);
-    }
+    public static Func<Item> HealingPotion = () => new Item(
+        name: "Healing Potion",
+        healing: 10);
 }

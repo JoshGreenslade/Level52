@@ -7,10 +7,10 @@ public class AlwaysAttackStrategy : IActionStrategy
 {
     public Action SelectAction(Battle battle)
     {
-        return new Action(
-            type: ActionType.Attack,
+        return Action.CreateAttackAction(
             activeCharacter: battle.GetActiveCharacter(),
-            target: battle.GetEnemyParty().Characters[0]
+            target: battle.GetEnemyParty().Characters[0],
+            attack: battle.GetActiveCharacter().Attacks[0]
         );
     }
 }

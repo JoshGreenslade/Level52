@@ -9,7 +9,7 @@ public class Action
     public Character? ActiveCharacter { get; }
     public Character? Target { get; }
     public Item? Item { get; }
-    public AttackData? Attack { get; }
+    public Attack? Attack { get; }
     public Party? ActiveParty { get; }
 
     public Action(
@@ -17,7 +17,7 @@ public class Action
         Character? activeCharacter = null,
         Character? target = null,
         Item? item = null,
-        AttackData? attack = null,
+        Attack? attack = null,
         Party? activeParty = null)
     {
         Type = type;
@@ -28,7 +28,7 @@ public class Action
         ActiveParty = activeParty;
     }
 
-    public static Action CreateAttackAction(Character activeCharacter, Character target, AttackData attack)
+    public static Action CreateAttackAction(Character activeCharacter, Character target, Attack attack)
     {
         return new Action(
             ActionType.Attack,
