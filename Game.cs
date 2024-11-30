@@ -1,6 +1,5 @@
 using Level52.Actions;
-using Level52.ActionStrategies;
-using Level52.Attacks;
+using Level52.Gears;
 using Level52.Items;
 using Level52.Utils;
 
@@ -42,6 +41,9 @@ public class Game
         HeroParty.AddItem(Item.HealingPotion());
         HeroParty.AddItem(Item.HealingPotion());
         HeroParty.AddItem(Item.HealingPotion());
+
+        HeroParty.GearInventory.Add(Gear.Dagger());
+        HeroParty.GearInventory.Add(Gear.Sword());
     }
 
     private void CheckLoseCondition()

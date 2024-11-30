@@ -1,5 +1,6 @@
 using Level52.Attacks;
 using Level52.Items;
+using Level52.Gears;
 
 namespace Level52.Actions;
 
@@ -11,6 +12,7 @@ public class Action
     public Item? Item { get; }
     public Attack? Attack { get; }
     public Party? ActiveParty { get; }
+    public Gear? Gear { get; }
 
     public Action(
         ActionType type,
@@ -18,7 +20,8 @@ public class Action
         Character? target = null,
         Item? item = null,
         Attack? attack = null,
-        Party? activeParty = null)
+        Party? activeParty = null,
+        Gear? gear = null)
     {
         Type = type;
         ActiveCharacter = activeCharacter;
@@ -26,6 +29,7 @@ public class Action
         Item = item;
         Attack = attack;
         ActiveParty = activeParty;
+        Gear = gear;
     }
 
     public static Action CreateAttackAction(Character activeCharacter, Character target, Attack attack)
@@ -51,5 +55,14 @@ public class Action
         return new Action(
             ActionType.DoNothing,
             activeCharacter: activeCharacter);
+    }
+
+    public static Action CreateEquipAction(Character activeCharacter, Gear gear, Party party)
+    {
+        return new Action(
+            ActionType.Equip,
+            activeCharacter: activeCharacter,
+            gear: gear,
+            activeParty: party);
     }
 }

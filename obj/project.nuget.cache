@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Yq64F/4fONtwdUaXh9thakwAUvTP0PWeJval7UUExAQWtVjxYokL/Z5Z95lGy6ibtsoS3CLFVLfa74iHHDE1ew==",
+  "dgSpecHash": "dWUczygLI8jhOQUDOQiY8sSzdx2XeJeplHGACd1S9z1EAZBVbF99yr/ZBCzPDGsKMY4+TIoK+lp+VFy5XhcI2Q==",
   "success": true,
-  "projectFilePath": "/home/developer/tutorials/APlayersGuide/Level52/Level52.csproj",
+  "projectFilePath": "/home/josh/Tutorial/C#/APlayersGuide/Level52/Level52.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

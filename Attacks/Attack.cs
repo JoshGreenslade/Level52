@@ -10,7 +10,7 @@ public class Attack
         Name = name;
         BaseAmount = baseAmount;
     }
-    
+
     public static readonly Func<Attack> Punch = () => new Attack(
         name: "Punch",
         baseAmount: 50
@@ -20,9 +20,19 @@ public class Attack
         name: "BoneCrush",
         baseAmount: 1
      );
-    
+
     public static readonly Func<Attack> Unraveling = () => new Attack(
        name: "Unraveling",
        baseAmount: 5
+       );
+
+    public static readonly Func<Attack> Stab = () => new Attack(
+       name: "Stab",
+       baseAmount: 1
+       );
+
+    public static readonly Func<Attack> Slash = () => new Attack(
+       name: "Slash",
+       baseAmount: 2
        );
 }

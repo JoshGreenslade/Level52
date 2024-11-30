@@ -1,4 +1,4 @@
-using Level52.Actions;
+using Level52.Gears;
 using Level52.Attacks;
 using Level52.Items;
 using Level52.Utils;
@@ -10,7 +10,7 @@ public class PlayerStrategy : IActionStrategy
 {
     public Action SelectAction(Battle battle)
     {
-        ServiceLocator.Display.WriteLine("1) Attack, 2) Use Item, 3) Do nothing");
+        ServiceLocator.Display.WriteLine("1) Attack, 2) Use Item, 3) Do nothing, 4) Equip Gear");
         string input = ServiceLocator.UserInput.GetInput();
 
         return input switch
@@ -18,6 +18,7 @@ public class PlayerStrategy : IActionStrategy
             "1" => AttackAction(battle),
             "2" => UseItemAction(battle),
             "3" => DoNothingAction(battle),
+            "4" => EquipGearAction(battle),
             _ => DoNothingAction(battle)
         };
     }
@@ -40,10 +41,16 @@ public class PlayerStrategy : IActionStrategy
         return Action.CreateDoNothingAction(battle.GetActiveCharacter());
     }
 
+    private Action EquipGearAction(Battle battle)
+    {
+        Gear gear = SelectGear(battle);
+        return Action.CreateEquipAction(battle.GetActiveCharacter(), gear, battle.GetActiveParty());
+    }
+
     private Attack SelectAttack(Battle battle)
     {
         var activeCharacter = battle.GetActiveCharacter();
-        var attacks = activeCharacter.GetAttacks();
+        var attacks = AttackSystem.GetAttacks(activeCharacter);
         while (true)
         {
             var attackIndex = 1;
@@ -106,6 +113,34 @@ public class PlayerStrategy : IActionStrategy
             foreach (var item in inventory)
             {
                 ServiceLocator.Display.WriteLine($"{index}) - {item.Name}");
+                index++;
+            }
+
+            var choice = ServiceLocator.UserInput.GetInput();
+            if (int.TryParse(choice, out int selectedIndex) &&
+                selectedIndex > 0 &&
+                selectedIndex <= inventory.Count)
+            {
+                var chosenItem = inventory[selectedIndex - 1];
+                return chosenItem;
+            }
+
+            ServiceLocator.Display.WriteLine("Invalid Choice");
+            ServiceLocator.Display.WriteLine();
+        }
+    }
+
+    private Gear SelectGear(Battle battle)
+    {
+        var activeParty = battle.GetActiveParty();
+        var inventory = activeParty.GearInventory;
+        while (true)
+        {
+            var index = 1;
+            ServiceLocator.Display.WriteLine("Choose an item");
+            foreach (var item in inventory)
+            {
+                ServiceLocator.Display.WriteLine($"{index}) - {item.GetName()}");
                 index++;
             }
 

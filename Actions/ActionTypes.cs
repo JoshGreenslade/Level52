@@ -4,5 +4,6 @@ public enum ActionType
 {
     Attack,
     UseItem,
-    DoNothing
+    DoNothing,
+    Equip
 }

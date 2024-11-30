@@ -1,6 +1,7 @@
 using System.Data.Common;
 using Level52.Attacks;
 using Level52.Damages;
+using Level52.Gears;
 using Level52.Items;
 using Level52.Utils;
 
@@ -20,6 +21,9 @@ public static class ActionSystem
                 break;
             case ActionType.UseItem:
                 ExecuteUseItem(action.ActiveCharacter, action.Item, action.ActiveParty);
+                break;
+            case ActionType.Equip:
+                ExecuteEquipGear(action.ActiveCharacter, action.Gear, action.ActiveParty);
                 break;
         }
     }
@@ -41,5 +45,11 @@ public static class ActionSystem
     public static void ExecuteDoNothing(Character activeCharacter)
     {
         ServiceLocator.Display.WriteLine($"{activeCharacter.GetName()} does nothing.");
+    }
+
+    public static void ExecuteEquipGear(Character activeCharacter, Gear gear, Party party)
+    {
+        ServiceLocator.Display.WriteLine($"{activeCharacter.GetName()} equipped {gear.GetName()}!");
+        GearSystem.ExecuteEquip(activeCharacter, gear, party);
     }
 }
